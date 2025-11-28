@@ -25,8 +25,8 @@ class _HomePageState extends State<HomePage> {
 
   /* ---------------- SHORT NAME FUNCTION ---------------- */
   String shortName(String name) {
-    if (name.length <= 7) return name;
-    return "${name.substring(0, 7)}…";
+    if (name.length <= 10) return name;
+    return "${name.substring(0, 10)}…";
   }
 
   @override
