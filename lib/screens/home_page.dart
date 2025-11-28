@@ -344,10 +344,12 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Flexible(
                           child: Text(
-                            shortName(s.name),
-                            overflow: TextOverflow.ellipsis,
+                            s.name,
+                            softWrap: true,
+                            overflow: TextOverflow.visible,
+                            maxLines: 2, // prevents overflow outside the box
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.w700,
                               color: theme.colorScheme.onSurface,
                             ),
@@ -517,7 +519,6 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 12),
                     child: TextButton.icon(
-                      icon: const Icon(Icons.restore),
                       label: const Text("Reset All"),
                       onPressed: _resetAllSubjects,
                       style: TextButton.styleFrom(
